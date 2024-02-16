@@ -101,7 +101,8 @@ public class FirstController {
         return"first/loginResult";
     }
 
-    /**<h1>Model을 통한 세션 저장</h1>
+
+    /**<h1>3.Model을 통한 세션 저장</h1>
      * '@SessionAttributes' 어노테이션을 통해 model에 담겨 있는 "id" 키를 꺼내서 세션에 저장할 수 있다.
      * */
 
@@ -110,7 +111,7 @@ public class FirstController {
         model.addAttribute("id",id);
         return "first/loginResult";
     }
-    /**<h2>SessionStatus</h2>
+    /**<h2>3-1SessionStatus</h2>
      * 이 어노테이션을 통해 세션에 담긴 값은 SessionStatus에서 제공하는 setComplete()로 만료시켜야한다.
      * */
     @GetMapping("logout2")
@@ -119,4 +120,20 @@ public class FirstController {
         sessionStatus.setComplete();
         return "first/loginResult";
     }
+
+    /**
+     * <h1>4.@RequestBody 등의 핸들러 메소등의 어노테이션들을 활용한 전달 받기 </h1>
+     * */
+    @GetMapping("body")
+    public void getBody(){};
+
+    @PostMapping("body")
+    public void body(@RequestBody String body, @RequestHeader("content-type") String contentType,
+                     @CookieValue(value = "JSESSIONID") String sessionID){
+        System.out.println("body = " + body);
+        System.out.println("contentType = " + contentType);
+        System.out.println("sessionID = " + sessionID);
+    }
+
+
 }
