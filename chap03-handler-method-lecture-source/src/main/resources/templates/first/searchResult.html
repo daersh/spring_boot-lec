@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchResult</title>
+</head>
+<body>
+    <!--설명 1. 속성에 키 값을 넣은 경우-->
+    <h1 align="center">Model에 담긴 커맨드 객체 정보 출력</h1>
+    <h3 th:text = "|메뉴 이름: ${menu.name}|"> </h3>
+    <h3 th:text = "|메뉴 가격: ${menu.price}|"> </h3>
+    <h3 th:text = "|메뉴 카테고리: ${menu.categoryCode}|"> </h3>
+    <h3 th:text = "|메뉴 상태: ${menu.orderableStatus}|"> </h3>
+
+    <!--설명 2. 속성에 키 값을 않넣은 경우에는 이렇게 하면 됨-->
+<!--    <h3 th:text = "|메뉴 이름: ${MenuDTO.name}|"> </h3>-->
+<!--    <h3 th:text = "|메뉴 가격: ${MenuDTO.price}|"> </h3>-->
+<!--    <h3 th:text = "|메뉴 카테고리: ${MenuDTO.categoryCode}|"> </h3>-->
+<!--    <h3 th:text = "|메뉴 상태: ${MenuDTO.orderableStatus}|"> </h3>-->
+
+</body>
+</html>
