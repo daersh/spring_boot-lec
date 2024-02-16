@@ -97,6 +97,7 @@ public class FirstController {
     }
     @GetMapping("logout1")
     public String logoutTest1(HttpSession session){
+        /*어노테이션으로 SessionStatus가 생성되어 이제 이 코드는 적용이 안된다.*/
         session.invalidate();
         return"first/loginResult";
     }
@@ -113,6 +114,7 @@ public class FirstController {
     }
     /**<h2>3-1SessionStatus</h2>
      * 이 어노테이션을 통해 세션에 담긴 값은 SessionStatus에서 제공하는 setComplete()로 만료시켜야한다.
+     * <br>SessionStatus 가 아닌 Session 으로 만료시키는게 적용 안되기 때문에 둘 중 하나만 써야한다.
      * */
     @GetMapping("logout2")
     public String logoutTest2(SessionStatus sessionStatus){
