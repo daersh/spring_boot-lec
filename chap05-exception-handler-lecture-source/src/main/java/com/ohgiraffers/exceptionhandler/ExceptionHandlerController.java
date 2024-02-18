@@ -15,7 +15,6 @@ public class ExceptionHandlerController {
         if(true) {  //설명. 의도적으로 에러 내기 위함
             throw new NullPointerException();
         }
-
         return "/";
     }
 
@@ -26,8 +25,6 @@ public class ExceptionHandlerController {
         }
         return "/";
     }
-
-
 
     @GetMapping("annotation-null")
     public String annotationNullPointerExceptionTest(){
