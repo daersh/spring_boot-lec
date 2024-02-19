@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+    <h1 align="center">파일을 설명과 함께 업로드하기</h1>
+
+    <h3>1. single file upload</h3>
+    <form action="single-file" method="post" enctype="multipart/form-data"> <!--인코딩 타입을 지정해야한다!-->
+        파일: <input type="file" name = "singleFile"><br>
+        파일 설명: <input type="text" name="singleFileDescription"><br>
+        <input type="submit" value="Upload file" accept="image/png, image/jpeg">
+        <img id="preview" />
+
+    </form>
+
+    <h3>2. multi file upload</h3>
+    <form action="multi-file" method="post" enctype="multipart/form-data"> <!--인코딩 타입을 지정해야한다!-->
+        파일: <input type="file" name = "multiFiles" multiple ><br>
+        파일 설명: <input type="text" name="multiFileDescription"><br>
+        <input type="submit" value="Upload file">
+    </form>
+
+
+</body>
+</html>

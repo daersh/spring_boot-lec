@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+    <style>
+        img{
+            width: 400px;
+        }
+    </style>
+    <!--
+        css 불러올 때는 아래와 같이 link
+        <link rel="stylesheet" href="test.css">
+    -->
+
+</head>
+<body>
+    <h1 align="center"> Upload result page</h1>
+    <h1 th:text="${message}"></h1>
+<!--    -->
+<!--    <img th:src="${img}" alt="">            &lt;!&ndash;alt: 시각장애인과 같이 이미지를 보지못하는 경우 alt를 읽게 해줌&ndash;&gt;-->
+<!--    <p th:text="${singleFileDescription}"></p>-->
+
+    <!--설명. server에서 이미지경로를 List<String> 형태로 보내 준 것을 반복시켜 img 테그들을 반복하여 만들어 낸다.-->
+    <div th:each="img:${imgs}">
+        <img th:src="${img}"/>
+    </div>
+    <p th:text="${multiFileDescription}"></p>
+
+
+</body>
+</html>
