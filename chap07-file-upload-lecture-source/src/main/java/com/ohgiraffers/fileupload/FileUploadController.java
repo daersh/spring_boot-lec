@@ -84,7 +84,9 @@ public class FileUploadController {
                 file.put("originFileName", originFileName);
                 file.put("savedName", savedName);
                 file.put("filePath",filePath);
+
                 files.add(file);
+
                 multiFiles.get(i).transferTo(new File(filePath+"/"+savedName));
 
                 saveFiles.add("uploadFiles/img/multi/"+savedName);
